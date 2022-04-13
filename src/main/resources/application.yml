@@ -3,7 +3,7 @@ spring:
   application:
     name: ms-eureka-server
   profiles:
-    active: "prod"
+    active: "dev"
 ---
 server:
   port: ${PORT:8761}
@@ -14,6 +14,10 @@ spring:
   cloud:
     config:
       enabled: false
+  security:
+    user:
+      name: admin
+      password: pwd
 eureka:
   client:
     fetchRegistry: 'false'
