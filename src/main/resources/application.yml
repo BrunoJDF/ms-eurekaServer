@@ -3,7 +3,7 @@ spring:
   application:
     name: ms-eureka-server
   profiles:
-    active: "dev"
+    active: "prod"
 ---
 server:
   port: ${PORT:8761}
