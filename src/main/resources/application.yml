@@ -22,6 +22,10 @@ eureka:
   client:
     fetchRegistry: 'false'
     registerWithEureka: 'false'
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://${eureka.instance.hostname}:${server.port}/info
+    healthCheckUrlPath: http://${eureka.instance.hostname}:${server.port}/health
 management:
   endpoints:
     web:
