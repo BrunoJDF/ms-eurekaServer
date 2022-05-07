@@ -3,7 +3,7 @@ spring:
   application:
     name: ms-eureka-server
   profiles:
-    active: "prod"
+    active: "docker"
 ---
 server:
   port: ${PORT:8761}
@@ -39,3 +39,12 @@ spring:
   cloud:
     config:
       uri: optional:configserver:https://radiant-plateau-86737.herokuapp.com/
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: optional:configserver:http://ms-config-server:8888/
+  cloud:
+    config:
+      uri: optional:configserver:http://ms-config-server:8888/

@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  microservices:
+    container_name: ms-eureka-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: no
+    networks:
+      - ms-ecosystem
+    ports:
+      - "8761:8761"
+networks:
+  ms-ecosystem:
+    name: ms-ecosystem
